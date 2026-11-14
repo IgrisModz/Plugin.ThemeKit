@@ -112,6 +112,12 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: microsoft
+          java-version: '21'
+
       - name: Install .NET MAUI workload
         run: dotnet workload install maui
 
@@ -122,6 +128,8 @@ jobs:
           if ($version -notmatch '^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$') {
             throw "Tag '$env:GITHUB_REF_NAME' must use the vMAJOR.MINOR.PATCH[-prerelease] format."
           }
+          dotnet pack src/Plugin.ThemeKit/Plugin.ThemeKit.csproj --configuration Release --output ./artifacts -p:Version=$version
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           dotnet pack src/Plugin.ThemeKit.Maui/Plugin.ThemeKit.Maui.csproj --configuration Release --output ./artifacts -p:Version=$version
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           dotnet pack src/Plugin.ThemeKit.WinUI/Plugin.ThemeKit.WinUI.csproj --configuration Release --output ./artifacts -p:Version=$version
@@ -141,6 +149,8 @@ jobs:
     needs: pack
     runs-on: windows-latest
     environment: nuget.org
+    permissions:
+      id-token: write
     steps:
       - name: Download NuGet packages
         uses: actions/download-artifact@v4
@@ -148,8 +158,27 @@ jobs:
           name: nuget-packages
           path: artifacts
 
-      - name: Publish MAUI package
-        run: dotnet nuget push ./artifacts/Plugin.ThemeKit.Maui.*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Log in to NuGet.org
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
 
-      - name: Publish WinUI package
-        run: dotnet nuget push ./artifacts/Plugin.ThemeKit.WinUI.*.nupkg --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Publish packages
+        shell: pwsh
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: |
+          $version = $env:GITHUB_REF_NAME -replace '^v', ''
+          $packages = @('IgrisModz.Plugin.ThemeKit', 'IgrisModz.Plugin.ThemeKit.Maui', 'IgrisModz.Plugin.ThemeKit.WinUI')
+          $paths = foreach ($package in $packages) {
+            $path = "./artifacts/$package.$version.nupkg"
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+              throw "Package not found: $path"
+            }
+            $path
+          }
+          foreach ($path in $paths) {
+            dotnet nuget push $path --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }

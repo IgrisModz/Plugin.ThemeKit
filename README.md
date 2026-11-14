@@ -18,7 +18,7 @@ Backdrop effects depend on Windows support. In a MAUI application, backdrops are
 | .NET MAUI | `IgrisModz.Plugin.ThemeKit.Maui` | [MAUI guide](src/Plugin.ThemeKit.Maui/README.md) |
 | WinUI 3 | `IgrisModz.Plugin.ThemeKit.WinUI` | [WinUI guide](src/Plugin.ThemeKit.WinUI/README.md) |
 
-Both packages use the shared `Plugin.ThemeKit` library. You normally only need to install the package for your application type. The projects target .NET 10.
+Both packages depend on the shared `IgrisModz.Plugin.ThemeKit` package. You normally only need to install the package for your application type. The projects target .NET 10.
 
 When the packages are available from your NuGet source, install the one you need:
 

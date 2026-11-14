@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>$(NetVersion)</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageId>IgrisModz.Plugin.ThemeKit</PackageId>
+    <Authors>IgrisModz</Authors>
+    <Description>Shared theme and style functionality for Plugin.ThemeKit.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/IgrisModz/Plugin.ThemeKit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IgrisModz/Plugin.ThemeKit</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
