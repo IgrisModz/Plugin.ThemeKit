@@ -78,7 +78,7 @@ jobs:
         run: dotnet --info
 
       - name: Build WinUI sample
-        run: dotnet build samples/Plugin.ThemeKit.WinUI.Sample/Plugin.ThemeKit.WinUI.Sample.csproj --configuration Release -p:Platform=x64 -p:PublishTrimmed=false
+        run: dotnet build samples/Plugin.ThemeKit.WinUI.Sample/Plugin.ThemeKit.WinUI.Sample.csproj --configuration Release -p:Platform=x64 -p:PublishTrimmed=false -p:PublishReadyToRun=false
 
   test:
     name: Run tests
