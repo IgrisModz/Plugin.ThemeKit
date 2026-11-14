@@ -56,6 +56,11 @@
     '$(OutputType)' != 'WinExe' and
     '$(OutputType)' != 'Exe'">
     <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="
+    '$(UseMaui)' == 'true' and
+    $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
     <AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>
   </PropertyGroup>
 
