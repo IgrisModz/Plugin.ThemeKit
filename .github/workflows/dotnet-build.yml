@@ -19,7 +19,7 @@ permissions:
 
 env:
   DOTNET_VERSION: '10.0.x'
-  MAUI_XCODE_VERSION: '^26'
+  MAUI_XCODE_VERSION: '26.0'
 
 jobs:
   build_maui:
