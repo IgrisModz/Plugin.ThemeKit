@@ -61,7 +61,7 @@ jobs:
 
       - name: Build MAUI sample (Mac Catalyst)
         if: runner.os == 'macOS'
-        run: dotnet build samples/Plugin.ThemeKit.Maui.Sample/Plugin.ThemeKit.Maui.Sample.csproj --configuration Release --framework net10.0-maccatalyst
+        run: dotnet build samples/Plugin.ThemeKit.Maui.Sample/Plugin.ThemeKit.Maui.Sample.csproj --configuration Release --framework net10.0-maccatalyst -p:RuntimeIdentifier=maccatalyst-arm64
 
       - name: Build MAUI sample
         if: runner.os != 'macOS'
