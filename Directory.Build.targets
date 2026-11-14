@@ -50,7 +50,7 @@
      <TargetFrameworks Condition="'$(IncludeTizenTargetFrameworks)' == 'true'">$(TargetFrameworks);$(NetVersion)-tizen</TargetFrameworks>
   </PropertyGroup>
 
-  <PropertyGroup Condition="
+  <!--<PropertyGroup Condition="
     '$(UseMaui)' == 'true' and
     $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows' and
     '$(OutputType)' != 'WinExe' and
@@ -62,6 +62,6 @@
     '$(UseMaui)' == 'true' and
     $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
     <AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>
-  </PropertyGroup>
+  </PropertyGroup>-->
 
 </Project>
