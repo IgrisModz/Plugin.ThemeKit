@@ -16,6 +16,32 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GitInfoReportImportance>high</GitInfoReportImportance>
+    <PackageId>IgrisModz.Plugin.ThemeKit.Maui</PackageId>
+    <Summary>Theme and style helper for .NET MAUI applications</Summary>
+    <Authors>IgrisModz</Authors>
+    <Owners>IgrisModz</Owners>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Product>IgrisModz.Plugin.ThemeKit.Maui ($(NetVersion))</Product>
+    <Copyright>© IgrisModz. All rights reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/IgrisModz/Plugin.ThemeKit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IgrisModz/Plugin.ThemeKit</RepositoryUrl>
+    <PackageReleaseNotes>See https://github.com/IgrisModz/Plugin.ThemeKit/releases</PackageReleaseNotes>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <Title>IgrisModz.Plugin.ThemeKit.Maui</Title>
+    <Description>Theme and style helper for .NET MAUI applications</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <Version>1.1.0</Version>
+    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>dotnet,maui,mica,micaalt,acrylic,acrylicthin,theme,style,igrismodz,android,ios,macos,maccatalyst,windows</PackageTags>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Plugin.ThemeKit\Plugin.ThemeKit.csproj" />
   </ItemGroup>

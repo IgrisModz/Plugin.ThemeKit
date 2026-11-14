@@ -4,6 +4,32 @@
     <TargetFramework>$(NetVersion)-windows10.0.26100.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GitInfoReportImportance>high</GitInfoReportImportance>
+    <PackageId>IgrisModz.Plugin.ThemeKit.WinUI</PackageId>
+    <Summary>Theme and style helper for .NET WinUI applications</Summary>
+    <Authors>IgrisModz</Authors>
+    <Owners>IgrisModz</Owners>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Product>IgrisModz.Plugin.ThemeKit.WinUI ($(NetVersion))</Product>
+    <Copyright>© IgrisModz. All rights reserved.</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/IgrisModz/Plugin.ThemeKit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IgrisModz/Plugin.ThemeKit</RepositoryUrl>
+    <PackageReleaseNotes>See https://github.com/IgrisModz/Plugin.ThemeKit/releases</PackageReleaseNotes>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <Title>IgrisModz.Plugin.ThemeKit.WinUI</Title>
+    <Description>Theme and style helper for .NET WinUI applications</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <Version>1.1.0</Version>
+    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>dotnet,winui,mica,micaalt,acrylic,acrylicthin,theme,style,igrismodz,windows</PackageTags>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.6.5" />
   </ItemGroup>
