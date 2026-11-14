@@ -50,16 +50,13 @@
      <TargetFrameworks Condition="'$(IncludeTizenTargetFrameworks)' == 'true'">$(TargetFrameworks);$(NetVersion)-tizen</TargetFrameworks>
   </PropertyGroup>
 
-  <Target Name="RemoveMauiClassLibraryPriFiles"
-          AfterTargets="_ComputeInputPriFiles"
-          Condition="
-            '$(UseMaui)' == 'true' and
-            $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows' and
-            '$(OutputType)' != 'WinExe' and
-            '$(OutputType)' != 'Exe'">
-    <ItemGroup>
-      <_PriFile Remove="@(_PriFile)" />
-    </ItemGroup>
-  </Target>
+  <PropertyGroup Condition="
+    '$(UseMaui)' == 'true' and
+    $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows' and
+    '$(OutputType)' != 'WinExe' and
+    '$(OutputType)' != 'Exe'">
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+    <AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>
+  </PropertyGroup>
 
 </Project>
