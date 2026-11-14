@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Plugin.ThemeKit.WinUI.Sample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Plugin.ThemeKit.WinUI.Sample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Samples/">
+    <Project Path="samples/Plugin.ThemeKit.Maui.Sample/Plugin.ThemeKit.Maui.Sample.csproj">
+      <Deploy Solution="Debug|*" />
+    </Project>
+    <Project Path="samples/Plugin.ThemeKit.WinUI.Sample/Plugin.ThemeKit.WinUI.Sample.csproj">
+      <Platform Project="x86" />
+    </Project>
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/Plugin.ThemeKit.Tests/Plugin.ThemeKit.Tests.csproj" />
+  </Folder>
+  <Project Path="src/Plugin.ThemeKit.Maui/Plugin.ThemeKit.Maui.csproj" />
+  <Project Path="src/Plugin.ThemeKit.WinUI/Plugin.ThemeKit.WinUI.csproj" />
+  <Project Path="src/Plugin.ThemeKit/Plugin.ThemeKit.csproj" />
+
+</Solution>
