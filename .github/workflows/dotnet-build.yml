@@ -51,7 +51,7 @@ jobs:
           java-version: '21'
 
       - name: Install .NET MAUI workload
-        run: dotnet workload install maui
+        run: dotnet workload install maui --skip-manifest-update
 
       - name: Display .NET information
         run: dotnet --info
