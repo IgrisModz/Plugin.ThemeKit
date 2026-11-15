@@ -15,8 +15,8 @@ Backdrop effects depend on Windows support. In a MAUI application, backdrops are
 
 | Application | Package | Latest Version | Guide |
 | --- | --- | --- |
-| .NET MAUI | `IgrisModz.Plugin.ThemeKit.Maui` | [![NuGet](https://img.shields.io/nuget/v/IgrisModz.Plugin.ThemeKit.Maui.svg)](https://www.nuget.org/packages/IgrisModz.Plugin.ThemeKit.Maui/) | [MAUI guide](src/Plugin.ThemeKit.Maui/README.md) |
-| WinUI 3 | `IgrisModz.Plugin.ThemeKit.WinUI` | [![NuGet](https://img.shields.io/nuget/v/IgrisModz.Plugin.ThemeKit.WinUI.svg)](https://www.nuget.org/packages/IgrisModz.Plugin.ThemeKit.WinUI/) | [WinUI guide](src/Plugin.ThemeKit.WinUI/README.md) |
+| .NET MAUI | `IgrisModz.Plugin.ThemeKit.Maui` | [![NuGet](https://img.shields.io/nuget/v/IgrisModz.Plugin.ThemeKit.Maui.svg)](https://www.nuget.org/packages/IgrisModz.Plugin.ThemeKit.Maui/)] | [MAUI guide](src/Plugin.ThemeKit.Maui/README.md) |
+| WinUI 3 | `IgrisModz.Plugin.ThemeKit.WinUI` | [![NuGet](https://img.shields.io/nuget/v/IgrisModz.Plugin.ThemeKit.WinUI.svg)](https://www.nuget.org/packages/IgrisModz.Plugin.ThemeKit.WinUI/)] | [WinUI guide](src/Plugin.ThemeKit.WinUI/README.md) |
 
 Both packages depend on the shared `IgrisModz.Plugin.ThemeKit` package. You normally only need to install the package for your application type. The projects target .NET 10.
 
